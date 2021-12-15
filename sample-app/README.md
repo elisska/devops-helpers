@@ -17,7 +17,7 @@ pip3 install networkx dash plotly
 ## How to run
 
 ```
-python3 app/GraphAnalysis.py data/obj_dependency_data.csv
+python3 GraphAnalysis.py obj_dependency_data.csv
 ```
 
 ## How to access
