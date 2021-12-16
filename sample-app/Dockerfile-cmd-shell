@@ -1,0 +1,5 @@
+FROM elisska/devops-helpers:dockerfile-method
+
+# this command is started when container is ran
+# below is recommended form of CMD
+CMD python GraphAnalysis.py obj_dependency_data.csv
