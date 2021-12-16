@@ -49,7 +49,7 @@ terraform output external_ip > hosts
 ansible-galaxy install avinetworks.docker
 ```
 
-*NOTE:* this role will install Docker Engine on a Linux machine.
+*NOTE:* this role will install Docker Engine on a Linux machine. Code can be found here: https://github.com/avinetworks/ansible-role-docker
 
 4. Run Ansible playbook to install Docker Engine on the created VM:
 
