@@ -1,5 +1,5 @@
 FROM elisska/devops-helpers:dockerfile-method
 
 # this command is started when container is ran
-# below is recommended form of CMD
+# below is shell form of CMD, not recommended since PID 1 is run as /bin/sh -c CMD
 CMD python GraphAnalysis.py obj_dependency_data.csv
