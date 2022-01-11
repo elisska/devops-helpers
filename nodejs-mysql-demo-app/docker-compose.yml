@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  app:
+    image: elisska/devops-helpers:nodejs-mysql-demo-app
+    ports:
+      - 3000:3000
+    working_dir: /app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos
+    expose:
+      - 3306
+
+volumes:
+  todo-mysql-data:
