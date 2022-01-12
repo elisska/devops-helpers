@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-demo-app
+  labels:
+    app: demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+        - name: nodejs-demo-app
+          image: elisska/devops-helpers:nodejs-mysql-demo-app
+          ports:
+            - containerPort: 3000
+          workingDir: /app
+          env:
+            - name: MYSQL_DB
+              #value: todos
+              valueFrom: 
+                configMapKeyRef:
+                  name: demo-app-configmap
+                  key: database_name
+            - name: MYSQL_HOST
+              #value: mysql
+              valueFrom: 
+                configMapKeyRef:
+                  name: demo-app-configmap
+                  key: database_host
+            - name: MYSQL_PASSWORD
+              #value: secret
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-password
+            - name: MYSQL_USER
+              #value: root
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-username
+      restartPolicy: Always
