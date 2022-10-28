@@ -51,6 +51,8 @@ kubectl run -it mysql1 --image=mysql -- bash
 # delete pod nginx and mysql
 kubectl delete pods nginx
 kubectl delete pods mysql
+# delete all pods
+kubectl delete --all pods
 # check pods were not recreated
 kubectl get pods
 ```
