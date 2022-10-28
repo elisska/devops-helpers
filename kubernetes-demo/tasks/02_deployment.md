@@ -10,7 +10,7 @@ Deployments are k8s-native way to manage containerized applications.
 * Deployment manages automatically created ReplicaSet, and ReplicaSet manages Pods
 * You should use Deployment for stateless applications!
 
-## Working with deloyments
+## Working with deployments
 
 ```
 # show available options for create
@@ -60,22 +60,26 @@ kubectl rollout undo deployment nginx-deployment
 ## Working with YAML files (manifests):
 ```
 # get entire Deployment yaml
-kubectl get deployments nginx-deployment -o yaml
+kubectl get deployment nginx-deployment -o yaml
 #Note: this gets info from etcd and provides full manifest with status field
 
-# get Deployment yaml to reuse with kubectl
-kubectl create deployments nginx-deployment1 --image=nginx --dry-run=client -o yaml > nginx-deployment1.yaml
+# get Deployment yaml to edit further
+kubectl create deployment nginx-deployment1 --image=nginx --dry-run=client -o yaml > nginx-deployment1.yaml
 
 # run apply
 kubectl apply -f nginx-deployment1.yaml
 #Note: this creates deployment
 
 # save to file & edit existing deploynment
-kubectl get deployments nginx-deployment -o yaml > nginx-deployment.yaml
+kubectl get deployment nginx-deployment -o yaml > nginx-deployment.yaml
 
 # run apply to edit existing deployment
 kubectl apply -f nginx-deployment.yaml
+
+# delete all deployments
+kubectl delete --all deployment 
 ```
+
 
 
 
