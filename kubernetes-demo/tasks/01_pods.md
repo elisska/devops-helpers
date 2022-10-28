@@ -39,8 +39,10 @@ kubectl run mysql --image=mysql
 kubectl describe pods mysql
 # get pod logs
 kubectl logs mysql
-# Log in to container in pod events at pod 
+# Log in to container in pod
 kubectl exec -it mysql -- bash
+# Starting new pod with interactive shell
+kubectl run -it mysql1 --image=mysql -- bash
 ```
 
 ## Deleting pods
