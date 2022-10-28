@@ -22,6 +22,8 @@ kubectl run nginx --image=nginx
 kubectl get pods
 # check extended information about the pod
 kubectl get pods -o wide
+# check pod object definition
+kubectl get pods nginx -o yaml
 # describe nginx pod and check events for the pod 
 kubectl describe pods nginx
 # edit nginx pod and change image version to 1.16
