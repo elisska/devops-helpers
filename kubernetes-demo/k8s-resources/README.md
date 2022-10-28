@@ -18,5 +18,7 @@ kubectl apply -f .
 
 Serve proxy to external NodeJS service (minikube example):
 ```
-minikube service nodejs-app-service
+minikube tunnel
 ```
+
+Open on `http://localhost:3000/`
