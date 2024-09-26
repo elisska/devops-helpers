@@ -5,7 +5,7 @@ resource "google_compute_instance" "vm_instance" {
 	zone = var.zone
 	boot_disk {
 		initialize_params {
-			image = "centos-cloud/centos-7"
+			image = "centos-stream-9"
 		}
 		}
 
