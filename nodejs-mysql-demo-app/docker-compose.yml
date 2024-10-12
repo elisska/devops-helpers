@@ -13,12 +13,14 @@ services:
       MYSQL_DB: todos
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8.4
+    command: --mysql-native-password=ON
     volumes:
       - todo-mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
+      MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
     expose:
       - 3306
 
