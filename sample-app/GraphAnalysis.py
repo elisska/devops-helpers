@@ -398,7 +398,7 @@ class GraphAnalysis:
 
             return self.shared_table_selector
 
-        app.run_server(debug=True, host='0.0.0.0', port=8050)
+        app.run(debug=True, host='0.0.0.0', port=8050)
 
 
 if __name__ == '__main__':
