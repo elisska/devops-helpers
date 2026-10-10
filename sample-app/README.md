@@ -6,7 +6,7 @@ Creates Web Ui on 8050 port once ran.
 
 ## Requirements
 
-Python >3.7 is a requirement. 
+Python >3.9 is a requirement. 
 
 ## Installation
 
