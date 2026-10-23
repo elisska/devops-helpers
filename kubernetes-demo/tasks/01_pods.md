@@ -41,6 +41,10 @@ kubectl run mysql --image=mysql
 kubectl describe pods mysql
 # get pod logs
 kubectl logs mysql
+# start container with env variable
+kubectl run mysql --image=mysql --env="MYSQL_RANDOM_ROOT_PASSWORD=yes"
+# check logs to find generated password:
+kubectl logs mysql | grep "GENERATED ROOT PASSWORD"
 # Log in to container in pod
 kubectl exec -it mysql -- bash
 # Starting new pod with interactive shell
