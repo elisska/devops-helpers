@@ -14,7 +14,7 @@ Deployments are k8s-native way to manage containerized applications.
 
 ```
 # show available options for create
-kubectl create
+kubectl create --help
 #Note: no pod object in available commands!! This is because: pod is the smallest unit, however, you usually DO NOT create PODS, your create DEPLOYMENTS. Deployment - abstraction over pods
 
 # create deployment
