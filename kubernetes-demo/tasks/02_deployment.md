@@ -54,7 +54,7 @@ kubectl rollout history deployment nginx-deployment
 watch kubectl get all
   
 # rollback
-kubectl rollout undo deployment nginx-deployment
+kubectl rollout undo deployment nginx-deployment --to-revision=1
 ```
 
 ## Working with YAML files (manifests):
