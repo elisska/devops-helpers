@@ -81,7 +81,10 @@ kubectl get deployment nginx-deployment -o yaml > nginx-deployment.yaml
 kubectl apply -f nginx-deployment.yaml
 
 # delete all deployments
-kubectl delete --all deployment 
+kubectl delete --all deployment
+
+# delete objects in particular manifest
+kubectl delete -f nginx-deployment.yaml
 ```
 
 
