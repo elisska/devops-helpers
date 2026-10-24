@@ -70,10 +70,14 @@ kubectl create deployment nginx-deployment1 --image=nginx --dry-run=client -o ya
 kubectl apply -f nginx-deployment1.yaml
 #Note: this creates deployment
 
+# edit existing deployment yaml - set replicas to another number
+# check difference
+kubectl diff -f nginx-deployment.yaml
+
 # save to file & edit existing deploynment
 kubectl get deployment nginx-deployment -o yaml > nginx-deployment.yaml
 
-# run apply to edit existing deployment
+# run apply to edit existing deployment - not safe!
 kubectl apply -f nginx-deployment.yaml
 
 # delete all deployments
